@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HealthCare</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Gradient Able Bootstrap admin template made using Bootstrap 4. The starter version of Gradient Able is completely free for personal project." />
+    <meta name="keywords"
+        content="free dashboard template, free admin, free bootstrap template, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="codedthemes">
+    <!-- Favicon icon -->
+    <link rel="icon" href="/static/assets/nm/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+
+
+    <link href="/static/assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script type="text/javascript" src="/static/assets/js/jquery.js"></script>
+    <style>
+        .bg-cover {
+            background-image: url('/static/assets/images/Chatbot.png');
+            /* background-color: #808080;
+          background-blend-mode: luminosity; */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        .VIpgJd-ZVi9od-ORHb-OEVmcd {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min-vh-100 d-flex flex-column bg-cover">
+
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand m-auto fs-4" href="#"><i class="fa-solid fa-robot"></i> Showroom Bot</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="chatbox">Chatbot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="myapppat">My Appointments</a>
+                        </li>
+                        <li class="nav-item active text-decoration-underline link-offset-2">
+                            <a class="nav-link" href="emergency">Emergency Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+
+
+            <div class="d-flex mt-4  justify-content-start align-items-center">
+                <h3 class="text-primary-emphasis link-offset-1 text-decoration-underline flex-grow-1 flex-md-grow-0">
+                    Emergency Contacts
+                </h3>
+            </div>
+
+            <div class="row justify-content-center gy-3 my-4">
+
+                <ul class="list-group d-flex flex-column gap-3">
+                    {% for hospital in hospitals %}
+                        <li class="list-group-item"><div>{{ hospital.name }}</div><div> {{ hospital.contact if hospital.contact else "No contact available" }}</div></li>
+                    {% endfor %}
+                </ul>
+
+
+            </div>
+
+        </div> 
+
+			
+        <div id="google_translate_element" style="position: fixed;bottom: 30px;right: 20px;z-index: 1000; "></div>	
+
+    </div>  
+
+
+	<script src="/static/assets/js/bootstrap.js"></script>
+
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en', 
+          }, 'google_translate_element');
+        }
+      </script>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+	
+	<script src="/static/js/plots.js"></script>
+
+
+
+
+</body>
+
+</html>

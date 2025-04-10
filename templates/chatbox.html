@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="/static/assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script type="text/javascript" src="/static/assets/js/jquery.js"></script>
+
+  <style>
+    .bg-cover {
+      background-image: url('/static/assets/images/Chatbot.jpg');
+      background-color: dimgray;
+      background-blend-mode: luminosity;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+		
+    .goog-logo-link {
+        display: none !important;
+    }
+
+    .goog-te-gadget {
+        color: transparent !important;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        top: 0px !important;
+    }  
+
+    .VIpgJd-ZVi9od-ORHb-OEVmcd {
+        display: none !important;
+    } 
+  </style>
+
+</head>
+
+<body>
+
+  <div class="min-vh-100 d-flex flex-column bg-cover">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid w-100 d-flex justify-content-center">
+        <div class="row w-100">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-center">
+            <a class="navbar-brand m-auto fs-4" href="#"><i class="fa-solid fa-robot"></i> Showroom Bot</a>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container my-5">
+      <div class="card bg-white">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="w-100 text-start">
+            <a href="#" class="text-dark text-decoration-none fs-5">Chatbox <i class="fa-solid fa-terminal"></i><a> 
+          </div>
+          <div class="w-100 text-end">            
+				<a href="imageloader" class="btn btn-danger btn-sm shadow-none">Image Loader<a> &nbsp;&nbsp;
+				<a href="chatbox" class="btn btn-danger btn-sm shadow-none">Chatbot<a> &nbsp;&nbsp;
+              <a href="bookapp" class="btn btn-danger btn-sm shadow-none">Appointment<a> &nbsp;&nbsp;
+              <a href="myapppat" class="btn btn-danger btn-sm shadow-none">My Appointments<a> &nbsp;&nbsp;
+              <a href="index" class="btn btn-danger btn-sm shadow-none">Logout<a> 
+            </div>
+        </div>
+        <div class="card-body bg-black">
+          <div class="container bg-black bg-opacity-25">
+            <div id="chatbox" class="mx-auto">
+              <p class="botText"><span>Hi There!</span></p>
+              <p class="botText"><span>I am a showroom chatbot. You can begin conversation by typing in a message and pressing enter
+                  </span></p>
+            </div>
+            <div id="userInput" class="mt-5 w-100 d-flex gap-3">
+              <input id="textInput" type="text" name="msg" placeholder="Message" class="form-control shadow-none">
+              <input id="buttonInput" type="submit" value="Send" class="btn btn-primary shadow-none">
+              <button id="voiceinput" class="btn btn-primary shadow-none" type="button"><i class="fa-solid fa-microphone"></i></button>
+            </div>
+            <script>
+              function getBotResponse() {
+                var rawText = $("#textInput").val();
+                var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+                $("#textInput").val("");
+                $("#chatbox").append(userHtml);
+                document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                $.get("/get", { msg: rawText }).done(function (data) {
+                  // Replace newline characters with <br> tags for proper formatting.
+                  var formattedData = data.replace(/\n/g, "<br>");
+                  var botHtml = '<p class="botText"><span>' + formattedData + '</span></p>';
+                  $("#chatbox").append(botHtml);
+                  document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                });
+              }
+            
+              $("#textInput").keypress(function (e) {
+                if (e.which == 13) {
+                  getBotResponse();
+                }
+              });
+              
+              $("#buttonInput").click(function () {
+                getBotResponse();
+              });
+              
+              $("#voiceinput").click(function () {
+                $.ajax({
+                  type: 'GET',
+                  url: '/voicedata',
+                  contentType: 'application/json;charset=UTF-8',
+                  dataType: "json",
+                  success: function(data) {
+                    alert(data);
+                    var rawText = data;
+                    var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+                    $("#textInput").val("");
+                    $("#chatbox").append(userHtml);
+                    document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                    $.get("/get", { msg: rawText }).done(function (data) {
+                      var botHtml = "";
+                      if(rawText != ""){
+                        // Format the response text with <br> tags for line breaks.
+                        botHtml = '<p class="botText"><span>' + data.replace(/\n/g, "<br>") + '</span></p>';
+                      }
+                      $("#chatbox").append(botHtml);
+                      document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                    });
+                  },
+                });
+              });
+            </script>
+            
+
+          </div>
+        </div>
+      </div>
+
+      <!--<h4 class="mt-4">Accuracy: {{acc}} %</h4>-->
+
+    </div>
+
+
+		<div id="google_translate_element" style="position: fixed;bottom: 30px;right: 20px;z-index: 1000; "></div>
+  </div>
+	<script src="/static/assets/js/bootstrap.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>E-Doctor</title>
+  <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description"
+    content="Gradient Able Bootstrap admin template made using Bootstrap 4. The starter version of Gradient Able is completely free for personal project." />
+  <meta name="keywords"
+    content="free dashboard template, free admin, free bootstrap template, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+  <meta name="author" content="codedthemes">
+
+  <link rel="icon" href="/static/assets/nm/images/favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+
+  <link href="/static/assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script type="text/javascript" src="/static/assets/js/jquery.js"></script>
+
+
+  <style>
+    .bg-cover {
+      background-image: url('/static/assets/images/Chatbot.png');
+      background-color: dimgray;
+      background-blend-mode: luminosity;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    body {
+      top: 0px !important;
+    }
+
+    .VIpgJd-ZVi9od-ORHb-OEVmcd {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="min-vh-100 d-flex flex-column bg-cover">
+
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand m-auto fs-4" href="#"><i class="fa-solid fa-robot"></i> Showroom Bot</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-decoration-underline link-offset-2" aria-current="page"
+                href="dochome">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myapp">My Appointments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctor">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid my-5">
+
+      <div class="row gy-3">
+        <div class="col-md-3">
+          <div class="card bg-white">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class="text-decoration-underline link-offset-2 text-dark">Total Users</div>
+                <div class=" text-dark my-3 ms-auto">{{patcount}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-white">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class=" text-decoration-underline link-offset-2 text-dark">Appointments</div>
+                <div class=" text-dark my-3 ms-auto">{{appcount}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<div class="container-fluid">
+  
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <td style="border:solid 2px;background-color: #0400ff;">
+                    Appointment Date
+                  </td>
+                  <td style="border:solid 2px;background-color: #0400ff;">
+                    Counts
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in gdata %}
+                <tr>
+                  <td style="border:solid 2px;">
+                    {{item[0]}}
+                  </td>
+                  <td style="border:solid 2px;">
+                    {{item[1]}}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+    <div id="google_translate_element" style="position: fixed;bottom: 30px;right: 20px;z-index: 1000; "></div>
+  </div>
+
+  <script src="/static/assets/js/bootstrap.js"></script>
+
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+
+  <script>
+
+
+
+    var table = $("table tbody");
+
+    var ids = '';
+    table.find('tr').each(function (i) {
+      debugger;
+      ids = makeid(5);
+      //alert(ids);
+      var $tds = $(this).find('td');
+      $tds.eq(4).append("<div id=" + ids + "></div>");
+      createChart(ids);
+      //makechart(ids);
+
+    });
+
+    function createChart(ids) {
+      google.charts.load('current', {
+        callback: function () {
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', 'Day');
+          data.addColumn('number', 'Sales');
+          data.addRows([
+            [1, gene()],
+            [2, gene()],
+            [3, gene()],
+            [4, gene()],
+            [5, gene()],
+            [6, gene()],
+            [7, gene()],
+            [8, gene()],
+            [9, gene()],
+            [10, gene()],
+            [11, gene()],
+            [12, gene()]
+          ]);
+          var options = {
+            width: 100,
+            height: 50,
+            'backgroundColor': 'transparent'
+          };
+
+          for (var i = 0; i < 1; i++) {
+            var container = document.getElementById(ids).appendChild(document.createElement('div'));
+            //alert(ids);
+            var chart = new google.visualization.LineChart(container);
+            chart.draw(data, options);
+          }
+        },
+        packages: ['corechart']
+      });
+    }
+
+    function gene() {
+      var num = Math.floor((Math.random() * 100) + 1);
+      return num;
+    }
+
+
+
+    function makeid(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+    }
+  </script>
+</body>
+
+</html>

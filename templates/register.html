@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+	<title>Showroom Bot</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Medical Care a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<link href="/static/assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+</head>
+<!-- Head -->
+<style>
+		
+	.goog-logo-link {
+		display: none !important;
+	}
+
+	.goog-te-gadget {
+		color: transparent !important;
+	}
+
+	.goog-te-banner-frame.skiptranslate {
+		display: none !important;
+	}
+
+	body {
+		top: 0px !important;
+	}  
+
+	.VIpgJd-ZVi9od-ORHb-OEVmcd {
+		display: none !important;
+	} 
+</style>
+<body>
+
+	<div class="min-vh-100 d-flex flex-column">
+
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid w-100 d-flex justify-content-center">
+				<div class="row w-100">
+					<div class="col-md-4"></div>
+					<div class="col-md-4 text-center">
+						<a class="navbar-brand m-auto fs-4" href="#"><i class="fa-solid fa-robot"></i> Showroom Bot</a>
+					</div>
+					<div class="col-md-4">
+
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container my-auto">
+
+			<form id="f1" runat="server">
+
+				<div class="row mt-4 justify-content-around">
+
+					<div class="col-md-5 d-flex flex-column justify-content-center">
+						<div style="position: relative; width: 100%; padding-top: 100%;">
+							<img src="/static/assets/images/log.jpg"
+								style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+								class="rounded-circle img-thumbnail" />
+						</div>
+					</div>
+					
+					<div class="col-md-5 d-flex flex-column justify-content-center">
+
+						<div class="row gy-2">
+
+							<div class="col-md-12">
+								<h1 class="text-white mb-2 text-center">Register</h1>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="form-label">Name:</label>
+									<input type="text" class="form-control shadow-none" id="name" runat="server"
+										placeholder="Enter Name">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="form-label">Password:</label>
+									<input type="password" class="form-control shadow-none" id="pswd" runat="server"
+										placeholder="Enter Password">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="form-label">Email:</label>
+									<input type="email" class="form-control shadow-none" id="email" runat="server"
+										placeholder="Enter Email">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="form-label">Phone#:</label>
+									<input type="number" class="form-control shadow-none" id="phone" runat="server"
+										placeholder="Enter Phone#">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="form-label">Age#:</label>
+									<input type="number" class="form-control shadow-none" id="age" runat="server"
+										placeholder="Enter Age#">
+								</div>
+							</div>
+
+
+							<div class="col-md-12 mb-2">
+								<div class="form-group">
+									<label class="form-label">Address:</label>
+									<textarea class="form-control shadow-none" id="addr" runat="server"
+										placeholder="Enter Address"></textarea>
+								</div>
+							</div> 
+
+							<div class="col-md-12">
+								<input type="button" id="btnregsubmit" runat="server"
+									Class="btn btn-primary shadow-none w-100" value="Submit"  />
+							</div>
+
+							<div class="col-md-12 py-4">
+								<div class="text-center gap-2">
+									<a href="/" class="text-decoration-none btn btn-sm rounded-2 btn-primary ">
+										<i class="fa-solid fa-house text-white"></i>
+									</a>
+									|
+									<div class="d-inline">
+										Already have an account?
+										<a href="/login"
+											class="text-decoration-none text-white shadow-none rounded-2 btn btn-sm btn-primary ">
+											Login
+										</a>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</form>
+			<!--//banner-->
+
+		</div>
+
+
+		<div id="google_translate_element" style="position: fixed;bottom: 30px;right: 20px;z-index: 1000; "></div>
+
+		</div> 
+
+
+
+	<script type="text/javascript" src="/static/assets/js/jquery.js"></script>
+	<script src="/static/assets/js/bootstrap.js"></script>
+
+		<script src="/static/js/plots.js"></script>
+		<script>
+			function Validator() {
+				debugger;
+				if (document.getElementById('name').value == '' &&
+					document.getElementById('pswd').value == '' && document.getElementById('email').value == '' &&
+					document.getElementById('phone').value == '' && document.getElementById('addr').value == '') {
+					alert('Please Fill All Fields');
+				}
+				var flag = true;
+
+
+				var namer = document.getElementById('name').value;
+				var intRegexnamer = /^[A-Za-z ]+$/;
+				if (!intRegexnamer.test(namer)) {
+					alert('Please enter a  name.');
+					flag = false;
+					return flag;
+				}
+				else {
+					flag = true;
+				}
+				var email = document.getElementById('email').value;
+				var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if (!emailReg.test(email) || email == '') {
+					alert('Please enter a valid email id.');
+					flag = false;
+					return flag;
+				}
+				else {
+					flag = true;
+				}
+
+
+				var phone = document.getElementById('phone').value;
+				var intRegex = /^(7|8|9)[0-9]{9}$/;
+				if (!intRegex.test(phone)) {
+					alert('Please enter a valid phone number.');
+					flag = false;
+					return flag;
+				}
+				else {
+					flag = true;
+				}
+
+				return flag;
+			}
+
+		</script>
+ <script type="text/javascript">
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+	}
+	</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

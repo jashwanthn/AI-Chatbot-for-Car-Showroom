@@ -1,0 +1,278 @@
+[
+    {
+        "city": "mysore",
+        "area": "Ashokpuram",
+        "pincode": 570008,
+        "coordinates": "12.2958,76.6394"
+    },
+    {
+        "city": "mysore",
+        "area": "Basaveswara Block",
+        "pincode": 571602,
+        "coordinates": "12.2861,76.6491"
+    },
+    {
+        "city": "mysore",
+        "area": "Belvadi",
+        "pincode": 571186,
+        "coordinates": "12.3167,76.6182"
+    },
+    {
+        "city": "mysore",
+        "area": "Bogadi",
+        "pincode": 570026,
+        "coordinates": "12.3066,76.6000"
+    },
+    {
+        "city": "mysore",
+        "area": "Brindavan Extension",
+        "pincode": 570020,
+        "coordinates": "12.3138,76.6181"
+    },
+    {
+        "city": "mysore",
+        "area": "Chamundi Extn",
+        "pincode": 570004,
+        "coordinates": "12.3089,76.6695"
+    },
+    {
+        "city": "mysore",
+        "area": "Chamundi Hill",
+        "pincode": 570010,
+        "coordinates": "12.3018,76.6841"
+    },
+    {
+        "city": "mysore",
+        "area": "Devaraja Mohalla",
+        "pincode": 570001,
+        "coordinates": "12.3051,76.6528"
+    },
+    {
+        "city": "mysore",
+        "area": "Food Technology",
+        "pincode": 570013,
+        "coordinates": "12.2894,76.6336"
+    },
+    {
+        "city": "mysore",
+        "area": "Gandhinagar",
+        "pincode": 570007,
+        "coordinates": "12.3098,76.6606"
+    },
+    {
+        "city": "mysore",
+        "area": "Gokulam Extension",
+        "pincode": 570002,
+        "coordinates": "12.3136,76.6278"
+    },
+    {
+        "city": "mysore",
+        "area": "Hinkal",
+        "pincode": 570017,
+        "coordinates": "12.3173,76.6014"
+    },
+    {
+        "city": "mysore",
+        "area": "Indira Nagar",
+        "pincode": 570010,
+        "coordinates": "12.2899,76.6371"
+    },
+    {
+        "city": "mysore",
+        "area": "Industrial Estate",
+        "pincode": 570020,
+        "coordinates": "12.3142,76.6203"
+    },
+    {
+        "city": "mysore",
+        "area": "Jalapuri",
+        "pincode": 570019,
+        "coordinates": "12.2907,76.6654"
+    },
+    {
+        "city": "mysore",
+        "area": "Jayalakshmipuram Extension",
+        "pincode": 570012,
+        "coordinates": "12.3027,76.6275"
+    },
+    {
+        "city": "mysore",
+        "area": "Jayanagar Extension",
+        "pincode": 570014,
+        "coordinates": "12.3011,76.6561"
+    },
+    {
+        "city": "mysore",
+        "area": "Jyothinagar",
+        "pincode": 570011,
+        "coordinates": "12.2989,76.6543"
+    },
+    {
+        "city": "mysore",
+        "area": "Kantharaje Urs Road",
+        "pincode": 570004,
+        "coordinates": "12.3071,76.6649"
+    },
+    {
+        "city": "mysore",
+        "area": "K.R.Circle",
+        "pincode": 570001,
+        "coordinates": "12.3103,76.6568"
+    },
+    {
+        "city": "mysore",
+        "area": "Krishnamurthy Puram",
+        "pincode": 570004,
+        "coordinates": "12.3028,76.6495"
+    },
+    {
+        "city": "mysore",
+        "area": "Kuvempunagar",
+        "pincode": 570023,
+        "coordinates": "12.2951,76.6432"
+    },
+    {
+        "city": "mysore",
+        "area": "Kyathamaranahalli",
+        "pincode": 570019,
+        "coordinates": "12.3022,76.6610"
+    },
+    {
+        "city": "mysore",
+        "area": "Lakshmipuram",
+        "pincode": 570004,
+        "coordinates": "12.3039,76.6576"
+    },
+    {
+        "city": "mysore",
+        "area": "Manasagangothri",
+        "pincode": 570006,
+        "coordinates": "12.3087,76.6449"
+    },
+    {
+        "city": "mysore",
+        "area": "Mandi Mohalla",
+        "pincode": 570021,
+        "coordinates": "12.3078,76.6541"
+    },
+    {
+        "city": "mysore",
+        "area": "Metagalli",
+        "pincode": 570016,
+        "coordinates": "12.3267,76.6171"
+    },
+    {
+        "city": "mysore",
+        "area": "Mysore University",
+        "pincode": 570005,
+        "coordinates": "12.3075,76.6412"
+    },
+    {
+        "city": "mysore",
+        "area": "Narasimharaja Mohalla",
+        "pincode": 570007,
+        "coordinates": "12.3073,76.6607"
+    },
+    {
+        "city": "mysore",
+        "area": "Nazarbad",
+        "pincode": 570010,
+        "coordinates": "12.3013,76.6574"
+    },
+    {
+        "city": "mysore",
+        "area": "New Bamboo Bazar",
+        "pincode": 570021,
+        "coordinates": "12.3086,76.6561"
+    },
+    {
+        "city": "mysore",
+        "area": "Parakalalu",
+        "pincode": 570016,
+        "coordinates": "12.3191,76.6248"
+    },
+    {
+        "city": "mysore",
+        "area": "Pilikula",
+        "pincode": 570015,
+        "coordinates": "12.3128,76.6474"
+    },
+    {
+        "city": "mysore",
+        "area": "Railway Workshop",
+        "pincode": 570020,
+        "coordinates": "12.3157,76.6201"
+    },
+    {
+        "city": "mysore",
+        "area": "Ramavilas Road",
+        "pincode": 570024,
+        "coordinates": "12.3108,76.6529"
+    },
+    {
+        "city": "mysore",
+        "area": "Saraswathipuram",
+        "pincode": 570009,
+        "coordinates": "12.3029,76.6435"
+    },
+    {
+        "city": "mysore",
+        "area": "Siddarthanagar Nagar",
+        "pincode": 570011,
+        "coordinates": "12.2944,76.6422"
+    },
+    {
+        "city": "mysore",
+        "area": "Surya Bakery Road",
+        "pincode": 570007,
+        "coordinates": "12.3072,76.6602"
+    },
+    {
+        "city": "mysore",
+        "area": "T.K.Layout",
+        "pincode": 570009,
+        "coordinates": "12.3123,76.6384"
+    },
+    {
+        "city": "mysore",
+        "area": "Udayagiri",
+        "pincode": 570019,
+        "coordinates": "12.3131,76.6627"
+    },
+    {
+        "city": "mysore",
+        "area": "V.V.Mohalla",
+        "pincode": 570002,
+        "coordinates": "12.3156,76.6251"
+    },
+    {
+        "city": "mysore",
+        "area": "Vani Vilas Market",
+        "pincode": 570001,
+        "coordinates": "12.3097,76.6608"
+    },
+    {
+        "city": "mysore",
+        "area": "Vidyaranyapuram",
+        "pincode": 570008,
+        "coordinates": "12.2954,76.6349"
+    },
+    {
+        "city": "mysore",
+        "area": "Vijayanagar II Stage",
+        "pincode": 570017,
+        "coordinates": "12.3179,76.6210"
+    },
+    {
+        "city": "mysore",
+        "area": "Vijayanagar III Stage",
+        "pincode": 570030,
+        "coordinates": "12.3112,76.6234"
+    },
+    {
+        "city": "mysore",
+        "area": "Yadavagiri",
+        "pincode": 570020,
+        "coordinates": "12.3161,76.6385"
+    }
+]

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="/static/assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script type="text/javascript" src="/static/assets/js/jquery.js"></script>
+
+  <style>
+    .bg-cover {
+      background-image: url('/static/assets/images/Chatbot.jpg');
+      background-color: dimgray;
+      background-blend-mode: luminosity;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+		
+    .goog-logo-link {
+        display: none !important;
+    }
+
+    .goog-te-gadget {
+        color: transparent !important;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        top: 0px !important;
+    }  
+
+    .VIpgJd-ZVi9od-ORHb-OEVmcd {
+        display: none !important;
+    } 
+  </style>
+
+</head>
+
+<body>
+
+  <div class="min-vh-100 d-flex flex-column bg-cover">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid w-100 d-flex justify-content-center">
+        <div class="row w-100">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-center">
+            <a class="navbar-brand m-auto fs-4" href="#"><i class="fa-solid fa-robot"></i> Showroom Bot</a>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container my-5">
+      <div class="card bg-white">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="w-100 text-start">
+            <a href="#" class="text-dark text-decoration-none fs-5">Chatbox <i class="fa-solid fa-terminal"></i><a> 
+          </div>
+          <div class="w-100 text-end">     
+			  <a href="imageloader" class="btn btn-danger btn-sm shadow-none">Image Loader<a> &nbsp;&nbsp;       
+              <a href="chatbox" class="btn btn-danger btn-sm shadow-none">Chatbot<a> &nbsp;&nbsp;
+              <a href="bookapp" class="btn btn-danger btn-sm shadow-none">Appointment<a> &nbsp;&nbsp;
+              <a href="myapppat" class="btn btn-danger btn-sm shadow-none">My Appointments<a> &nbsp;&nbsp;
+              <a href="index" class="btn btn-danger btn-sm shadow-none">Logout<a> 
+            </div>
+        </div>
+        <div class="card-body bg-black">
+          <div class="container bg-black bg-opacity-25">
+            
+            <form id="upload-file" method="post" enctype="multipart/form-data" class="">
+              <div class="row justify-content-center">
+
+                      <label class="form-label border-0 bg-transparent text-uppercase text-white">Upload Image :</label>
+                  
+                  <div class="col-md-6 col-12 text-center">
+                      <div class="image-upload">
+                          <label for="first_image">
+                              <img src="./static/images/file.png" class="rounded-circle shadow border border-white" width="100"/>
+                          </label>
+                          <input type="file" class="form-control" id="first_image" name="first_image"
+                              onchange="previewFile(this);" />
+                      </div>
+                  </div>
+
+                  <div class="text-center my-1">
+                      <img src="" height="400" width="400" class="rounded mx-auto mt-2 mb-2" alt="" id="previewImg"
+                          style="display:none;" />
+                  </div>
+                  <div class="text-center my-5">
+                      <input type="button" class="btn btn-light text-secondary shadow rounded-pill fw-bold" value="Upload Image" onclick="uploadimg();" />
+                  </div>
+
+              </div>
+
+              
+          </form>
+          <div id="result" style="display:none;">
+            <div class="row justify-content-center">
+
+              <div class="col-4 md-mb-0 mb-2 text-center">
+                  <label class="form-control border-0 bg-transparent text-white">Car :</label>
+              </div>
+              <div class="col-8 md-mb-0 mb-2 text-center">
+                  <label class="form-control border-0 bg-transparent text-white" id="carval"></label>
+              </div>
+
+          </div>
+          <div class="row justify-content-center">
+
+            <div class="col-4 md-mb-0 mb-2 text-center">
+                <label class="form-control border-0 bg-transparent text-white">Accuracy :</label>
+            </div>
+            <div class="col-8 md-mb-0 mb-2 text-center">
+                <label class="form-control border-0 bg-transparent text-white" id="accval"></label>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+
+          <div class="col-4 md-mb-0 mb-2 text-center">
+              <label class="form-control border-0 bg-transparent text-white">Car Info :</label>
+          </div>
+          <div class="col-8 md-mb-0 mb-2">
+              <label class="form-control border-0 bg-transparent text-white" style="justify-content: normal;" id="carinfo"></label>
+          </div>
+
+      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+		<div id="google_translate_element" style="position: fixed;bottom: 30px;right: 20px;z-index: 1000; "></div>
+  </div>
+	<script src="/static/assets/js/bootstrap.js"></script>
+  <script>
+
+    function previewFile(input) {
+        // debugger;
+        var file = $("#first_image").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function () {
+                $("#previewImg").attr("src", reader.result);
+                $("#previewImg").addClass("img-thumbnail");
+                $("#previewImg").show();
+            }
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function uploadimg() {
+        debugger;
+        var form_data = new FormData($('#upload-file')[0]);
+        $.ajax({
+            type: 'POST',
+            url: '/uploadajax',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+                processor(data)
+            },
+        });
+    }
+
+    function processor(data) {
+        debugger;
+        $("#result").show();
+        var res = data.substring(1, data.length - 1);
+        
+        res = res.split("|");
+        $("#carval").html(res[0]);
+        $("#accval").html(res[1] + "%");
+        $("#carinfo").html(res[2]);
+        //document.getElementById('myresult').innerHTML=data;    
+    }
+
+</script>
+
+</body>
+
+</html>
